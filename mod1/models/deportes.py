@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
- from odoo import models, fields
+from odoo import models, fields
 
 
- class deportes(models.Model):
+class deportes(models.Model):
      _name = 'deportes.nombres'
      _description = 'Esta clase almacena los nombres de los deportes'
 

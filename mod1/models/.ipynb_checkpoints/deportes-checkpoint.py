@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import models, fields
 
 
-# class mod1(models.Model):
-#     _name = 'mod1.mod1'
-#     _description = 'mod1.mod1'
+class deportes(models.Model):
+     _name = 'deportes.nombres'
+     _description = 'Esta clase almacena los nombres de los deportes'
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
+     nombre = fields.Char()
+     ID deporte = fields.Integer()
+     valoracion = fields.Float(compute="_value_pc", store=True)
+     descripcion = fields.Text()
 #
 #     @api.depends('value')
 #     def _value_pc(self):
