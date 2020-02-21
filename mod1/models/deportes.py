@@ -8,7 +8,7 @@ class deportes(models.Model):
      _description = 'Esta clase almacena los nombres de los deportes'
 
      nombre = fields.Char()
-     ID deporte = fields.Integer()
+     IDdeporte = fields.Integer()
      valoracion = fields.Float(compute="_value_pc", store=True)
      descripcion = fields.Text()
 #
