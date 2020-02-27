@@ -293,7 +293,7 @@ class Todoo(models.Model):
     plan_accion=fields.Text()
 
 
-
+    tratamiento_de_datos=fields.Boolean()   
     
 
      
