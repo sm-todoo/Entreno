@@ -117,6 +117,7 @@
                          <field name="tallac" string="Talla Camisa"/>
                          <field name="tallas" string="Talla Saco"/>
                          <field name="tallaz" string="Talla Zapatos"/>
+                         <field name="tratamiento_de_datos" string="Tratamiento de datos"/>
 
                        </group>  
  
