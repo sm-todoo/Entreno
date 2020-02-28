@@ -170,6 +170,8 @@
                         
                           <field name="pe_eco" string="Existen personas que dependan económicamente de usted" required="True"/>
                           <field name="cab_familia" string="Es cabeza de familia" required="True"/>
+                          <field name="num_per__nucleo" string="Número de personas del núcleo familiar" required="True"/>
+                          <field name="num_per_estado_discapacidad" string="Número de personas en estado de discapacidad" required="True"/>
 
                        </group>   
                          
