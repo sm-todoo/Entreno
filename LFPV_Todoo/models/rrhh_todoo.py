@@ -100,7 +100,7 @@ tipo_vivienda = [
     ('Otro', 'Otro')   
 ]
 
-val_parentezco = [
+val_parentesco = [
     ('ABUELO (A)', 'ABUELO (A)'),
     ('AMIGO (A)', 'AMIGO (A)'),
     ('ESPOSO (A)', 'ESPOSO (A)'),
@@ -213,7 +213,8 @@ class Todoo(models.Model):
 
     nombre_completo=fields.Char(string="Nombre Completo")
     tel_contacto=fields.Char(string="Télefono")
-    parentezco=fields.Selection(val_parentezco)
+    acac=fields.Char()
+    parentesco=fields.Selection(val_parentesco)
     direccion_contacto=fields.Char(string="Dirección del contacto")
 
 
