@@ -158,10 +158,9 @@
                       <group>
                         <group string="Persona en caso de Emergencia">
                           <field name="nombre_completo" string="Nombre Completo" required="True"/>
-                          <field name="tel_contacto" string="Télefono" required="True"/>
-                          
+                          <field name="tel_contacto" string="Télefono" required="True"/>                          
                           <field name="direccion_contacto" string="Dirección" required="True"/>
-                          
+                          <field name="parentesco" string="Parentesco" required="True"/>
                        </group>   
 
                        <group>
