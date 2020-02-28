@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_sector_customer_form" model="ir.ui.view">
+      <field name="name">sector.customer.form</field>
+      <field name="model">requisiciones</field>
+      <field name="arch" type="xml">
+        <form string="Requisiciones">
+          <header>
+            <field name="status" widget="statusbar" statusbar_visible="Borrador,Aprobada,Abierta,Cerrada,Garantía,Rechazada"  options="{'clickable': '1', 'fold_field': 'fold'}"/>
+          </header>
+          <sheet>
+            <group>
+                  <group>
+                    <field name="name" string="Referencia de la Requisición"/>
+                    <field name="solicitante" string="solicitante"/>
+                    <field name="cargo_soli" string="Cargo del solicitante"/>
+                  </group>
+
+                    <group>
+
+                     <field name="emp" string="Empresa Cliente" />
+                     <field name="prioridad" string="Prioridad" widget="priority"/>
+                     <field name="date_aper" string="Fecha de Apertura"/>
+                    
+
+
+
+
+                  </group>
+                  
+                  
+            </group>
+
+
+
+                <notebook>
+           <page string="Información de la Vacante">
+             <group>
+               <group>
+                  <field name="jefe_inmediato" string="Jefe Inmediato" required="True"/>
+                  <field name="cargo_solicitado" string="Cargo Solicitado" required="True"/>
+                  <field name="catidad_vacantes" string="Cantidad de Vacantes" required="True"/>
+                  <field name="Generos" string="Genero" required="True"/>
+                 
+                  <field name="ciudades" string="Ciudad" required="True"/>
+                  <field name="sede" string="Sede" required="True"/>
+                  <field name="area" string="Área" required="True"/>
+                  <field name="centro_costo_facturable" string="Centro de Costo Facturable" required="True"/>                
+                  <field name="un_organizativa" string="Cliente/Proyecto o Unidad Organizativa" required="True"/>
+               </group>
+
+                   
+               <group>
+                 <field name="personal_a_cargo" string="Tiene Personal a Cargo" required="True"/>
+                 <field name="masivo" string="Masivo" required="True"/>
+                 <field name="requiere_entrevista" string="Requiere Entrevista con Jefe Inmediato" required="True"/>
+                 <field name="requiere_prueba" string="Requiere Prueba Técnica" required="True"/>
+                 <field name="requiere_studio_seguridad" string="Requiere Estudio de Seguridad" required="True"/>
+
+               </group>
+
+             </group>
+            
+
+             
+           </page>
+              
+            <page string="Contrato">
+               <group>
+                 <group>
+                    <field name="tipo_pag" string="Tipo de Pago"/>
+                    <field name="turn" string="Turno" required="True"/>
+                    <field name="horari" string="Horario de Trabajo" required="True"/>
+                    <field name="nivel_riesgo" string="Nivel de Riesgo"/>
+                    <field name="arl_1" string="ARL" required="True"/>
+                    <field name="nivel_riesgo_arl" string="Nivel de Riesgo ARL" required="True"/>
+                    <field name="caja_compensac" string="Caja de Compensación"/>
+                    <field name="manejo_vacaciones" string="Horario / Manejo de Vacaciones"/>
+                    <field name="manejo_incapacidades" string="Manejo de Incapacidades Generales"/>
+                
+                 </group>
+
+                 <group>                 
+                   <field name="tipo_contrato" string="Tipo de Contrato" />
+                   <field name="Tiempo_de_Contrato_Inicial" attrs="{'required': [('tipo_contrato', 'in', ['Fijo'])]}" groups="hr.group_hr_user" string="Tiempo de Contrato Inical"/>
+
+
+                   <field name="rango" attrs="{'required': [('Tiempo_de_Contrato_Inicial', '!=', 0)]}" groups="hr.group_hr_user" string="Rango"/>    
+
+                   <field name="cliente1" attrs="{'invisible': [('tipo_contrato', 'not in', ['Obra Labor'])]}" groups="hr.group_hr_user" required="True"/>
+                   <field name="No_Contrato_Comercial" attrs="{'invisible': [('tipo_contrato', 'not in', ['Obra Labor'])]}" groups="hr.group_hr_user" required="True"/>
+                  
+                  
+                 </group>
+               </group>
+
+
+
+            </page>
+
+
+
+            <page string="Justificación">
+              <group>
+
+                <group>
+                 <field name="mo_solicitud" string="Motivo de Solicitud"/>               
+                 <field name="per_quien_reemplaza" string="Persona a Quien Reemplaza"/>
+                 <field name="cargo_pre" string="Cargo Presupuestado" required="True"/>
+                </group>
+
+                <group>
+                  <field name="tipo_de_salario" string="Tipo de Salario" required="True"/>
+                  <field name="pacto_con" string="Pacto / Convención"/>
+                  <field name="refer" string="Referido"/>
+                  <field name="docuemnto_ref" string="Documento Referido"/>                  
+                </group>
+
+
+
+                <group string="Beneficios">                 
+                  <field name="aux_alimentacion"/>
+                  <field name="Valor_Auxilio_d_Alimentación" attrs="{'invisible': [('aux_alimentacion', 'not in', ['Si'])]}" groups="hr.group_hr_user"/>                  
+                  <field name="Auxilio_de_Alimentación_a_partir_de" attrs="{'invisible': [('aux_alimentacion', 'not in', ['Si'])]}" groups="hr.group_hr_user" required="True"/>
+
+                  <field name="aux_rodamiento"/>
+                  <field name="Valor_Auxili_de_Rodamiento" attrs="{'invisible': [('aux_rodamiento', 'not in', ['Si'])]}" groups="hr.group_hr_user"/>
+
+                  <field name="Auxilio_de_Rodamiento_a_partir_de" attrs="{'invisible': [('aux_rodamiento', 'not in', ['Si'])]}" groups="hr.group_hr_user" required="True"/>                
+
+                  <field name="aux_celular" />
+                  <field name="Valor_Auxilio_de_Celular" attrs="{'invisible': [('aux_celular', 'not in', ['Si'])]}" groups="hr.group_hr_user"/>
+                  <field name="Auxilio_de_Celular_a_partir_de" attrs="{'invisible': [('aux_celular', 'not in', ['Si'])]}" groups="hr.group_hr_user" required="True"/>
+                  
+                </group>
+
+              
+                <group>                                 
+                  <field name="medicina_prepagada" string="Medicina Prepagada" />
+                  <field name="Valor_Medicina_Prepagada" attrs="{'invisible': [('medicina_prepagada', 'not in', ['Si'])]}" groups="hr.group_hr_user"/>
+                  <field name="Medicina_Prepagada_a_partir_de" attrs="{'invisible': [('medicina_prepagada', 'not in', ['Si'])]}" groups="hr.group_hr_user" string="Medicina Prepagada a partir de" required="True"/>          
+
+                  <field name="bonos" />
+                  <field name="Valor_Bonos" attrs="{'invisible': [('bonos', 'not in', ['Si'])]}" groups="hr.group_hr_user"/>
+                  <field name="Bonos_a_partir_de" attrs="{'invisible': [('bonos', 'not in', ['Si'])]}" groups="hr.group_hr_user" required="True"/>                
+                   
+                  <field name="comisiones" />
+                  <field name="Valor_Comisiones" attrs="{'invisible': [('comisiones', 'not in', ['Si'])]}" groups="hr.group_hr_user"/>
+                  <field name="Comisiones_a_partir_de" attrs="{'invisible': [('comisiones', 'not in', ['Si'])]}" groups="hr.group_hr_user" required="True"/>
+                   
+                  <field name="otro" />
+                  <field name="cual_Otro_Beneficio" attrs="{'invisible': [('otro', 'not in', ['Si'])]}" groups="hr.group_hr_user"/>
+                  <field name="Valor_Otro_Beneficio" attrs="{'invisible': [('otro', 'not in', ['Si'])]}" groups="hr.group_hr_user" string="Valor Otro Beneficio" required="True"/>
+                  <field name="Otro_Beneficio_a_partir_de" attrs="{'invisible': [('otro', 'not in', ['Si'])]}" groups="hr.group_hr_user" string="Otro Beneficio a partir de"/>
+ 
+
+
+              
+                </group>
+
+              </group>
+
+
+
+
+
+            </page>
+            <page string="Asignación">
+                <group>
+                  <group>
+                    <field name="tipo_cargo" string="Tipo de Cargo"/>
+                    <field name="psicologo" string="Psicólogo"/>
+                    <field name="reclutador" string="Reclutador"/>
+                  </group>
+                </group>
+            </page>
+
+
+         </notebook>
+               
+
+                <group>
+                <field name="observaciones" string="Observaciones"/>
+              </group>
+
+          </sheet>
+            
+             
+             
+          
+
+        </form>
+      </field>
+    </record>
+
+
+
+           
+
+     
+
+
+
+
+    <record id="view_sector_customer_tree" model="ir.ui.view">
+      <field name="name">sector.customer.tree</field>
+      <field name="model">requisiciones</field>
+        <field name="arch" type="xml">
+            <tree string="sector customer">
+                <field name="name" string="Requisición"/>
+                <field name="status" string="Estado de la Requisición"/>
+                
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_sector_customer" model="ir.actions.act_window">
+        <field name="name">Requisiciones</field>
+        <field name="res_model">requisiciones</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Requisiciones
+          </p>
+        </field>
+    </record>
+
+    <menuitem name='Requisiciones'
+            action='action_sector_customer'
+            id='sector_customer_menu'
+            parent='hr_recruitment.menu_hr_recruitment_root'
+            sequence='3' /> 
+
+    </data>   
+
+
+
+    
+
+    
+
+
+
+</odoo>
+
