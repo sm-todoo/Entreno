@@ -179,7 +179,7 @@
 
                          <field name="tiene_mascotas" string="Tiene Mascotas" required="True"/>
                          <field name="mascotas" string="Cantidad de Mascotas" attrs="{'invisible': [('tiene_mascotas', 'not in', ['Si'])]}" groups="hr.group_hr_user" required="True"/>
-                         <field name="tipo_mascotas" string="Tipo de Mascota" attrs="{'invisible': [('mascotas', 'not in', ['1'])]}" groups="hr.group_hr_user" required="True"/>
+                         <field name="tipo_mascotas" string="Tipo de Mascota" attrs="{'invisible': [('mascotas', 'not in', ['1','2','3','4','5'])]}" groups="hr.group_hr_user" required="True"/>
 
                        </group>
 
