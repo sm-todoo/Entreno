@@ -178,7 +178,8 @@ class Todoo(models.Model):
     via_generadora=fields.Char()
     predio=fields.Char()
     complemento=fields.Char()
-    
+    direccion_completa=fields.Char()
+
 
     tipo_vivienda=fields.Selection(tipo_vivienda)
     cual_tipo_vivienda=fields.Char()
