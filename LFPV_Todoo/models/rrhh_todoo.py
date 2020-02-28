@@ -113,6 +113,17 @@ val_parentesco = [
     ('OTRO', 'OTRO')
     ]
 
+tip_masc = [
+    ('AVES', 'AVES'),
+    ('CONEJOS', 'CONEJOS'),
+    ('GATOS', 'GATOS'),
+    ('HAMSTER','HAMSTER'),
+    ('PECES','PECES'),
+    ('PERROS','PERROS'),
+    ('REPTILES','REPTILES'),
+    ('OTROS', 'OTROS')
+    ]
+
 
 class hijos(models.Model):
     _name = 'hijos'
@@ -230,7 +241,8 @@ class Todoo(models.Model):
 
     tiene_mascotas=fields.Selection([('Si', 'Si'),('No', 'No')])
     mascotas=fields.Selection([('1', '1'),('2', '2'),('3', '3'),('4', '4'),('5','5')])
-    tipo_mascotas=fields.Char(string="Tipo de Mascotas")
+    tipo_mascotas=fields.Selection(tip_masc)
+
 
 
     lic_conducir=fields.Selection([('Si', 'Si'),('No', 'No')])
