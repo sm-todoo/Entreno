@@ -179,6 +179,7 @@
 
                        <group>
 
+                        <field name="tiene_mascota" string="Tiene Mascota" required="True"/>
                         
                          <field name="mascotas" string="Número de Mascotas" required="True"/>
                          <field name="tipo_mascotas" string="Tipo de Mascotas" required="True"/>                       
