@@ -174,16 +174,7 @@
                           <field name="num_per_estado_discapacidad" string="Número de personas en estado de discapacidad" required="True"/>
 
                        </group>   
-
-                       <group>
-
-                        <field name="tiene_mascotas" string="Tiene Mascotas" required="True"/>
-
-
-                         
-                       <group/>
-
-                         
+                      
 
 
                        <group>
