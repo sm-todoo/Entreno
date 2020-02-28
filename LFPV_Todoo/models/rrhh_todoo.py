@@ -213,9 +213,9 @@ class Todoo(models.Model):
 
     nombre_completo=fields.Char(string="Nombre Completo")
     tel_contacto=fields.Char(string="Télefono")
-    acac=fields.Char()
     parentesco=fields.Selection(val_parentesco)
     direccion_contacto=fields.Char(string="Dirección del contacto")
+    dferg=fields.Char()
 
 
     re=fields.Selection([('Si', 'Si'),('No', 'No')])
