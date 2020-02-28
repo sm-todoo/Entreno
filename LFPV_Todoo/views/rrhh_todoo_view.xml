@@ -161,6 +161,10 @@
                           <field name="tel_contacto" string="Télefono" required="True"/>                          
                           <field name="direccion_contacto" string="Dirección" required="True"/>
                           <field name="parentesco" string="Parentesco" required="True"/>
+                          <field name="cual_parentesco" />
+                          <field name="parentesco" attrs="{'invisible': [('cual_parentesco', 'not in', ['Importados'])]}" groups="hr.group_hr_user"/>
+
+
                        </group>   
 
                        <group>
