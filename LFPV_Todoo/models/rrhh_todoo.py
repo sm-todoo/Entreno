@@ -229,10 +229,10 @@ class Todoo(models.Model):
    #campos grupo 3 de la page informacion familiar
 
     tiene_mascotas=fields.Selection([('Si', 'Si'),('No', 'No')])
-    mascotas=fields.Integer(string="Numero de Mascotas")
+    mascotas=fields.Selection([('1', '1'),('2', '2')])
     tipo_mascotas=fields.Char(string="Tipo de Mascotas")
 
-    
+
     lic_conducir=fields.Selection([('Si', 'Si'),('No', 'No')])
     tipo_lic_conducir=fields.Selection([('A1', 'A1'),('A2', 'A2'),('B1', 'B1'),('B2','B2'),('B3','B3'),('C1', 'C1'),('C2','C2'),('C3','C3')])
     medio_transporte=fields.Char(string="Medio de Transporte")
