@@ -123,12 +123,7 @@ class Todoo(models.Model):
     cliente1=fields.Char(string="Cliente")
     No_Contrato_Comercial=fields.Char(string="No. Contrato Comercial")
     tiempo_contrato=fields.Integer(string="Tiempo Real del Contrato")
-    rango=fields.Selection([('Días', 'Días'),('Meses', 'Meses'),('Años', 'Años')])
-
-
-
-
-   
+    rango=fields.Selection([('Días', 'Días'),('Meses', 'Meses'),('Años', 'Años')])   
 
 
 
@@ -177,3 +172,5 @@ class Todoo(models.Model):
 
     
     observaciones=fields.Char(string="Observaciones")
+
+ 

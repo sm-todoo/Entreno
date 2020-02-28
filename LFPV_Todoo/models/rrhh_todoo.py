@@ -120,7 +120,7 @@ class Todoo(models.Model):
     _inherit = 'hr.applicant'
    
    
-    
+    #campos del grupo 1 page informacion general
     name1 = fields.Char(string="Primer Apellido")
     name2 = fields.Char(string="Segundo Apellido")
     name3 = fields.Char(string="Primer Nombre")
@@ -128,7 +128,12 @@ class Todoo(models.Model):
     tratamiento = fields.Selection([('DRA.', 'DRA.'),('SRA.', 'SRA.'),('SRTA.', 'SRTA.'), ('ING.', 'ING.')])
     name5 = fields.Many2one('res.country')
     nit = fields.Char(string='NIT', size=11)
-    #Campos de Dirección.
+    tipod=fields.Selection([('N.U.I.P', 'N.U.I.P'),('Cédula de Ciudadania', 'Cédula de Ciudadania'),('Cédula de Extranjería', 'Cédula de Extranjería'), ('Tarjeta de Identidad', 'Tarjeta de Identidad'),('Pasaporte','Pasaporte'),('NIT','NIT'),('Registro Civil','Registro Civil'),('Pasado Judicial','Pasado Judicial'),('Libreta Militar','Libreta Militar'),('Licencia de Conducción','Licencia de Conducción'),('Visa','Visa'),('Antecedentes Disciplinarios','Antecedentes Disciplinarios'),('RUT','RUT')])
+    ide=fields.Char(string="Número de Identificación")
+    cide=fields.Char(string="Confirmar Número de Identificación")
+    lugar_expedicion=fields.Many2one('ciudades')
+
+    #Campos de Dirección. tipo DIAN
     field_1 = fields.Selection(av)
     field_2 = fields.Integer(required=True)
     field_3 = fields.Selection(alphabet)
@@ -143,33 +148,23 @@ class Todoo(models.Model):
     field_12 = fields.Char()
     street = fields.Char()
 
-    name13 = fields.Char(string="Nombre Completo")
-    
+    #campos grupo 2 de la page informacion general
+    name13 = fields.Char(string="Nombre Completo")    
     pais= fields.Many2one('res.country')
-
     namef = fields.Date(string="Fecha de Nacimiento")
-
-    conf=fields.Date(string="Confirmar Fecha de Nacimiento")
-    
+    conf=fields.Date(string="Confirmar Fecha de Nacimiento")    
     dep=fields.Many2one('res.country.state')
-
     city=fields.Char(string="Ciudad")
-
-    barrio=fields.Char(string="Barrio de Residencia")
-
-    tipod=fields.Selection([('N.U.I.P', 'N.U.I.P'),('Cédula de Ciudadania', 'Cédula de Ciudadania'),('Cédula de Extranjería', 'Cédula de Extranjería'), ('Tarjeta de Identidad', 'Tarjeta de Identidad'),('Pasaporte','Pasaporte'),('NIT','NIT'),('Registro Civil','Registro Civil'),('Pasado Judicial','Pasado Judicial'),('Libreta Militar','Libreta Militar'),('Licencia de Conducción','Licencia de Conducción'),('Visa','Visa'),('Antecedentes Disciplinarios','Antecedentes Disciplinarios'),('RUT','RUT')])
-    ide=fields.Char(string="Número de Identificación")
-    cide=fields.Char(string="Confirmar Número de Identificación")
-    lugar_expedicion=fields.Many2one('ciudades')
+    barrio=fields.Char(string="Barrio de Residencia")  
 
     
-
-
+    #tallas, pantalon, camisa, saco, zapatos
     tallap=fields.Selection([('XS', 'XS'),('S', 'S'),('M', 'M'), ('L', 'L'),('X','X'),('XL','XL'),('XXL','XXL')])
     tallac=fields.Selection([('XS', 'XS'),('S', 'S'),('M', 'M'), ('L', 'L'),('X','X'),('XL','XL'),('XXL','XXL')])
     tallas=fields.Selection([('XS', 'XS'),('S', 'S'),('M', 'M'), ('L', 'L'),('X','X'),('XL','XL'),('XXL','XXL')])
     tallaz=fields.Selection(tallazapatos)
-
+     
+    #telegono,celular,correo,confirmar correo, idioma nativo, grupo sanguineo, genero. 
     tel=fields.Char(string="Télefono")
     cel=fields.Char(string="Celular")
     correo=fields.Char(string="Correo")
@@ -178,19 +173,21 @@ class Todoo(models.Model):
     grupo_san=fields.Selection(grupo_san)
     genero=fields.Selection([('Masculino', 'Masculino'),('Femenino', 'Femenino'),('Indefinido', 'Indefinido')])
 
-
+    #GRUPO: INFORMACION DE VIVIENDA
     tipo_vivienda=fields.Selection(tipo_vivienda)
+    cual_tipo_vivienda=fields.Char()
     carac_vivienda=fields.Char(string="Características de la Vivienda")
     zona_vivienda=fields.Char(string="Zona de Vivienda")
     ser_energia_elec=fields.Selection([('Si', 'Si'),('No', 'No')])
     alcantarilla=fields.Selection([('Si', 'Si'),('No', 'No')])
     acc=fields.Selection([('Si', 'Si'),('No', 'No')])
 
-
+    #GRUPO: INFORMACION DE VIVIENDA2
     basura=fields.Selection([('Si', 'Si'),('No', 'No')])
     etnico=fields.Selection([('Mestizo', 'Mestizo'),('Blanco', 'Blanco'),('Afrocolombiano', 'Afrocolombiano'),('Indigena','Indigena'),('Gitano','Gitano')])
     estrato=fields.Selection([('1', '1'),('2', '2'),('3', '3'),('4','4'),('5','5'),('6','6')])
     gt=fields.Selection([('Si', 'Si'),('No', 'No')])
+
    
     
 
@@ -219,7 +216,7 @@ class Todoo(models.Model):
     escolaridad=fields.Selection([('Primaria', 'Primaria'),('Bachiller', 'Bachiller'),('Curso o Seminario', 'Curso o Seminario'),('Técnica','Técnica'),('Tecnológica','Tecnológica'),('Universitaria', 'Universitaria'),('Especialización', 'Especialización'),('Maestría','Maestría'),('Doctorado','Doctorado')])
     estado_civil=fields.Selection([('Soltero/a', 'Soltero/a'),('Casado/a', 'Casado/a'),('Divorciado/a', 'Divorciado/a'),('Unión Libre','Unión Libre'),('Viudo/a','Viudo/a')])
 
-
+    #campos conyugue
     primer_apellido_conyugue=fields.Char(string="Primer Apellido del Cónyugue")
     segundo_apellido_conyugue=fields.Char(string="Segungo Apellido del Cónyugue")
     primer_nombre_conyugue=fields.Char(string="Primer Nombre del Cónyugue")
@@ -229,11 +226,14 @@ class Todoo(models.Model):
     lugar_nacimiento_conyugue=fields.Char(string="Lugar de Nacimiento del Cónyugue")
     pais_nacimiento_conyugue=fields.Many2one('res.country')
 
-
+    #campos relacionados traidos de la requisición
     requisicion=fields.Many2one('requisiciones')
     emp_aplica=fields.Char(string='Cargo del Solicitante', related='requisicion.emp.name')
     cargo_aplica=fields.Char(string="Cargo al que Aplica", related="requisicion.cargo_solicitado.name")
     jefe=fields.Char(string="Jefe Inmediato", related="requisicion.jefe_inmediato.name")
+   
+
+
      
 
     Compañia=fields.Many2one('res.company')
@@ -293,7 +293,7 @@ class Todoo(models.Model):
     plan_accion=fields.Text()
 
 
-    tratamiento_de_datos=fields.Boolean()   
+
     
 
      
