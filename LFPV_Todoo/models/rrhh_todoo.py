@@ -100,7 +100,18 @@ tipo_vivienda = [
     ('Otro', 'Otro')   
 ]
 
-
+val_parentezco = [
+    ('ABUELO (A)', 'ABUELO (A)'),
+    ('AMIGO (A)', 'AMIGO (A)'),
+    ('ESPOSO (A)', 'ESPOSO (A)'),
+    ('HERMANO (A)','HERMANO (A)'),
+    ('HIJO (A)','HIJO (A)'),
+    ('MADRE','MADRE'),
+    ('PADRE','PADRE'),
+    ('SOBRINO (A)','SOBRINO (A)'),
+    ('TIO (A)','TIO (A)'),
+    ('OTRO', 'OTRO')
+    ]
 
 
 class hijos(models.Model):
@@ -202,7 +213,7 @@ class Todoo(models.Model):
 
     nombre_completo=fields.Char(string="Nombre Completo")
     tel_contacto=fields.Char(string="Télefono")
-    Parentesco=fields.Char(string="Parentesco")
+    parentezco=fields.Selection(val_parentezco)
     direccion_contacto=fields.Char(string="Dirección del contacto")
 
 
