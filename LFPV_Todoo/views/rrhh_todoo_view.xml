@@ -122,9 +122,11 @@
                          <group string="Información de Vivienda">
 
                           <field name="nombre_via_principal" string="Nombre Vía Principal" required="True"/>
+                          <field name="via_generadora" string="Vía Generadora" required="True"/>
+                          <field name="predio" string="Predio" required="True"/>
+                          <field name="complemento" string="Complemento" required="True"/>
 
-
-                       </group>  
+                         </group>  
 
                        <group> 
                           <field name="tipo_vivienda" string="Tipo de Vivienda"/>                        
