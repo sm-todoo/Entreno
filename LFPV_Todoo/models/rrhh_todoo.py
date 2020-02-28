@@ -175,7 +175,11 @@ class Todoo(models.Model):
 
     #GRUPO: INFORMACION DE VIVIENDA
     nombre_via_principal=fields.Char()
+    via_generadora=fields.Char()
+    predio=fields.Char()
+    complemento=fields.Char()
     
+
     tipo_vivienda=fields.Selection(tipo_vivienda)
     cual_tipo_vivienda=fields.Char()
     carac_vivienda=fields.Char(string="Características de la Vivienda")
