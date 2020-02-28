@@ -174,11 +174,15 @@
                           <field name="num_per_estado_discapacidad" string="Número de personas en estado de discapacidad" required="True"/>
 
                        </group>   
-                      
+
+
 
 
                        <group>
 
+                         <field name="tiene_mascotas" string="Tiene Mascotas" required="True"/>
+                         <field name="mascotas" string="Cantidad de Mascotas" attrs="{'invisible': [('tiene_mascotas', 'not in', ['Si'])]}" groups="hr.group_hr_user" required="True"/>
+                         <field name="tipo_mascotas" string="Tipo de Mascotas" attrs="{'invisible': [('tiene_mascotas', 'not in', ['Si'])]}" groups="hr.group_hr_user" required="True"/>
                        
                          <field name="estudia_actualmente" string="Estudia Actualmente" required="True"/>
                          <field name="año_graduacion" string="Año de Graduación" required="True"/>
