@@ -120,6 +120,13 @@
                        
 
                          <group string="Información de Vivienda">
+
+                          <field name="nombre_via_principal" string="Nombre Vía Principal" required="True"/>
+
+
+                       </group>  
+
+                       <group> 
                           <field name="tipo_vivienda" string="Tipo de Vivienda"/>                        
                           <field name="carac_vivienda" string="Características de la Vivienda"/>
                           <field name="zona_vivienda" string="Zona de Vivienda"/>
@@ -127,8 +134,6 @@
                           <field name="alcantarilla" string="Cuenta con servicio de alcantarillado"/>
                           <field name="acc" string="Cuenta con servicio de Acueducto"/>
                           <field name="cual_tipo_vivienda" string="Cual es el tipo de Vivienda"/>
-                         
-
 
                        </group>   
 
