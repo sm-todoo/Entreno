@@ -216,6 +216,8 @@ class Todoo(models.Model):
     parentesco=fields.Selection(val_parentesco)
     direccion_contacto=fields.Char(string="Dirección del contacto")
     dferg=fields.Char()
+    cual_parentesco=fields.Char()
+
 
 
     re=fields.Selection([('Si', 'Si'),('No', 'No')])
