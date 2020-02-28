@@ -164,7 +164,7 @@ class Todoo(models.Model):
     tallas=fields.Selection([('XS', 'XS'),('S', 'S'),('M', 'M'), ('L', 'L'),('X','X'),('XL','XL'),('XXL','XXL')])
     tallaz=fields.Selection(tallazapatos)
      
-    #telegono,celular,correo,confirmar correo, idioma nativo, grupo sanguineo, genero. 
+    #telefono,celular,correo,confirmar correo, idioma nativo, grupo sanguineo, genero. 
     tel=fields.Char(string="Télefono")
     cel=fields.Char(string="Celular")
     correo=fields.Char(string="Correo")
@@ -174,6 +174,8 @@ class Todoo(models.Model):
     genero=fields.Selection([('Masculino', 'Masculino'),('Femenino', 'Femenino'),('Indefinido', 'Indefinido')])
 
     #GRUPO: INFORMACION DE VIVIENDA
+    nombre_via_principal=fields.Char()
+    
     tipo_vivienda=fields.Selection(tipo_vivienda)
     cual_tipo_vivienda=fields.Char()
     carac_vivienda=fields.Char(string="Características de la Vivienda")

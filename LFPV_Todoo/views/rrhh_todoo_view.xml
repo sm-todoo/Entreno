@@ -121,7 +121,7 @@
 
                          <group string="Información de Vivienda">
 
-                          <field name="nombre_via_principal" string="Nombre Vía Principal" required="True"/>
+                         
 
 
                        </group>  
