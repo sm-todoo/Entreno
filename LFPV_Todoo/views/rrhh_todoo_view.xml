@@ -125,6 +125,7 @@
                           <field name="via_generadora" string="Vía Generadora" required="True"/>
                           <field name="predio" string="Predio" required="True"/>
                           <field name="complemento" string="Complemento" required="True"/>
+                          <field name="direccion_completa" string="Dirección completa" required="True"/>
 
                          </group>  
 
