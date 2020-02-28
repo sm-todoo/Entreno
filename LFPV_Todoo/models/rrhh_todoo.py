@@ -208,7 +208,7 @@ class Todoo(models.Model):
 
    
     
-
+    #GRUPO: PERSONA EN CASO DE EMERGENCIA PAGE INFORMACION FAMILIAR
 
 
     nombre_completo=fields.Char(string="Nombre Completo")
@@ -218,11 +218,13 @@ class Todoo(models.Model):
     dferg=fields.Char()
     cual_parentesco=fields.Char()
 
-
+    #campos grupo 2 de la page informacion familiar
 
     re=fields.Selection([('Si', 'Si'),('No', 'No')])
     pe_eco=fields.Selection([('Si', 'Si'),('No', 'No')])
     cab_familia=fields.Selection([('Si', 'Si'),('No', 'No')])
+    num_per__nucleo=fields.Integer()
+    num_per_estado_discapacidad=fields.Integer()
   
 
     mascotas=fields.Integer(string="Numero de Mascotas")
