@@ -226,7 +226,9 @@ class Todoo(models.Model):
     num_per__nucleo=fields.Integer()
     num_per_estado_discapacidad=fields.Integer()
   
+   #campos grupo 3 de la page informacion familiar
 
+    tiene_mascotas=fields.Selection([('Si', 'Si'),('No', 'No')])
     mascotas=fields.Integer(string="Numero de Mascotas")
     tipo_mascotas=fields.Char(string="Tipo de Mascotas")
     lic_conducir=fields.Selection([('Si', 'Si'),('No', 'No')])
