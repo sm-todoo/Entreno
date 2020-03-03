@@ -250,6 +250,7 @@ class Todoo(models.Model):
     medio_transporte=fields.Char(string="Medio de Transporte")
     medio_transporte_sec=fields.Char("Medio de Transporte Secundario")
     Horas_trabajo=fields.Integer(string="Horas para llegar al Trabajo")
+
     estudia_actualmente=fields.Selection([('Si', 'Si'),('No', 'No')])
     año_graduacion=fields.Date(string="Año de Graduación")
     escolaridad=fields.Selection([('Primaria', 'Primaria'),('Bachiller', 'Bachiller'),('Curso o Seminario', 'Curso o Seminario'),('Técnica','Técnica'),('Tecnológica','Tecnológica'),('Universitaria', 'Universitaria'),('Especialización', 'Especialización'),('Maestría','Maestría'),('Doctorado','Doctorado')])
@@ -264,6 +265,7 @@ class Todoo(models.Model):
     genero_conyugue=fields.Selection([('Masculino', 'Masculino'),('Femenino', 'Femenino'),('Indefinido', 'Indefinido')])
     lugar_nacimiento_conyugue=fields.Char(string="Lugar de Nacimiento del Cónyugue")
     pais_nacimiento_conyugue=fields.Many2one('res.country')
+    fecha_nacimiento_conyugue=fields.Date()
 
     #campos relacionados traidos de la requisición
     requisicion=fields.Many2one('requisiciones')

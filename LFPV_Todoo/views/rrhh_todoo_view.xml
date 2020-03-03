@@ -207,12 +207,12 @@
                         <group string="Cónyuge">
                          <field name="primer_apellido_conyugue" attrs="{'invisible': [('estado_civil', 'not in', ['Casado/a','Unión Libre'])]}" groups="hr.group_hr_user" string="Primer Apellido del Cónyuge" required="True" />
                          <field name="segundo_apellido_conyugue" attrs="{'invisible': [('estado_civil', 'not in', ['Casado/a','Unión Libre'])]}" groups="hr.group_hr_user"/>
-                         <field name="primer_nombre_conyugue" string="Primer Nombre del Cónyuge" required="True"/>
-                         <field name="segundo_nombre_conyugue" string="Segundo Nombre del Cónyuge"/>
-                         <field name="escolaridad_conyugue" string="Escolaridad del Cónyuge"/>
-                         <field name="genero_conyugue" string="Genero del Cónyuge" required="True"/>
-                         <field name="lugar_nacimiento_conyugue" string="Lugar de Nacimiento del Cónyuge" required="True"/>
-                         <field name="pais_nacimiento_conyugue" string="País de Nacimiento del Cónyuge" required="True"/>
+                         <field name="primer_nombre_conyugue" attrs="{'invisible': [('estado_civil', 'not in', ['Casado/a','Unión Libre'])]}" groups="hr.group_hr_user" string="Primer Nombre del Cónyuge" required="True"/>
+                         <field name="segundo_nombre_conyugue" attrs="{'invisible': [('estado_civil', 'not in', ['Casado/a','Unión Libre'])]}" groups="hr.group_hr_user"/>
+                         <field name="escolaridad_conyugue" attrs="{'invisible': [('estado_civil', 'not in', ['Casado/a','Unión Libre'])]}" groups="hr.group_hr_user" string="Escolaridad del Cónyuge"/>
+                         <field name="genero_conyugue" attrs="{'invisible': [('estado_civil', 'not in', ['Casado/a','Unión Libre'])]}" groups="hr.group_hr_user" string="Genero del Cónyuge" required="True"/>
+                         <field name="lugar_nacimiento_conyugue" attrs="{'invisible': [('estado_civil', 'not in', ['Casado/a','Unión Libre'])]}" groups="hr.group_hr_user" string="Lugar de Nacimiento del Cónyuge" required="True"/>
+                         <field name="pais_nacimiento_conyugue" attrs="{'invisible': [('estado_civil', 'not in', ['Casado/a','Unión Libre'])]}" groups="hr.group_hr_user" string="País de Nacimiento del Cónyuge" required="True"/>
 
 
                        </group>
