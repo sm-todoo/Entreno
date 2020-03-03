@@ -186,11 +186,14 @@
 
                        <group>
 
-                       
+                       <!--
                          <field name="estudia_actualmente" string="Estudia Actualmente" required="True"/>
                          <field name="año_graduacion" string="Año de Graduación" required="True"/>
                          <field name="escolaridad" string="Escolaridad" required="True"/>
+                        -->
                          <field name="estado_civil" string="Estado Civil" required="True"/>
+
+
                        </group>
 
                         <group>
@@ -202,8 +205,8 @@
                         </group>
 
                         <group string="Cónyuge">
-                         <field name="primer_apellido_conyugue" string="Primer Apellido del Cónyuge" required="True" />
-                         <field name="segundo_apellido_conyugue" string="Segundo Apellido del Cónyuge"/>
+                         <field name="primer_apellido_conyugue" attrs="{'invisible': [('estado_civil', 'not in', ['Casado/a','Unión Libre'])]}" groups="hr.group_hr_user" string="Primer Apellido del Cónyuge" required="True" />
+                         <field name="segundo_apellido_conyugue" attrs="{'invisible': [('estado_civil', 'not in', ['Casado/a','Unión Libre'])]}" groups="hr.group_hr_user"/>
                          <field name="primer_nombre_conyugue" string="Primer Nombre del Cónyuge" required="True"/>
                          <field name="segundo_nombre_conyugue" string="Segundo Nombre del Cónyuge"/>
                          <field name="escolaridad_conyugue" string="Escolaridad del Cónyuge"/>
